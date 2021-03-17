@@ -1,0 +1,150 @@
+body,
+.cor-padrao {
+    background-color: #4a26ff;
+}
+
+#li-acoes{
+    width: 145pt;
+}
+
+#input-search-menu_mobile{
+    padding-left: 60px;
+}
+
+.logo {
+    width: 90px;
+    height: 70px;
+}
+
+.btn-search{
+    cursor: pointer;
+    background: transparent;
+    outline: none;
+    border: none; 
+}
+
+.search-menu_mobile{
+    margin-top: 7px;
+}
+
+.card-panel{
+    box-shadow: none;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.cards .card {
+    width: 300px;
+    margin: 30px auto;
+}
+
+.cards .card .action-items {
+    display: flex; 
+    justify-content: flex-start; 
+    align-items: center;
+}
+
+.card-title {
+    font-size: 1.8em !important;
+}
+
+.inventory-title {
+    font-size: 1.3em !important;
+}
+
+.preco {
+    margin-left: 25px !important; 
+    font-size: 1.5em !important;
+}
+
+/* Inputs */
+
+.input-field label {
+    color: #fff !important;
+}
+
+.input-field input:focus+label {
+    color: #fff !important;
+}
+
+.input-field textarea:focus,
+.input-field input:focus {
+    border-bottom: 1px solid #fff !important;
+    box-shadow: 0 1px 0 0 #fff !important;
+}
+
+.input-field .prefix {
+    color: #fff !important;
+}
+
+.form-comprar button i {
+    font-size: 1.5rem;
+}
+
+.mobile-title {
+    display: none;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    body {
+        overflow-x: hidden;
+    }
+    
+    .navbar-fixed nav .menu-icon {
+        margin: 1.5% 0 0 4%;
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .card {
+        width: 250px;
+    }
+
+    .mobile-title {
+        display: inline-block;
+    }
+
+    .fslider {
+        display: none;
+    }
+
+    .form-comprar {
+        display: flex !important;
+        justify-content: center !important;
+        margin: auto !important;
+    }
+
+    .form-comprar button {
+        width: 150px;
+    }
+}
+
+/* iPad */
+
+@media (max-width: 990px) {
+    .input-hide {
+        display: none;
+    }
+
+    .navbar-fixed nav {
+        height: 70px;
+    }
+}
+
+@media (min-width: 990px) {
+    .navbar-fixed nav .logo {
+        margin-left: 80%;
+    }
+}
