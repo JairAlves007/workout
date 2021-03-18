@@ -1,5 +1,6 @@
 <?php
     require_once("controller/valida_login.php");
+    $_SESSION['paginaAtual'] = $_SERVER['PHP_SELF'];
     $sql = "SELECT * FROM produtos";
     $executar = mysqli_query($conn, $sql);
 ?>
@@ -54,31 +55,25 @@
                 <div class="card-image light">
                     <img src="<?php echo $dados['img']; ?>" alt="Foto Do <?php echo $dados['nome']; ?>">
                     
-                    <form action="" method="post">
-                        <input type="hidden" name="id" value="<?php echo $dados['id']; ?>">
-                        <?php
-                            if($dados['favorito'] == 0):
-                        ?>
-                            <button type="submit" id="link-car" class="btn-floating halfway-fab red" title="Favoritar">
-                                <i class="material-icons right">favorite_border</i>
-                            </button>
-                        <!-- <a href="controller/adicionarFavoritos.php?id=" >
-                        </a> -->
-                        
-                        <?php
-                            else:
-                        ?>
-                            <button type="submit" id="link-car" class="btn-floating halfway-fab red" title="Favoritar">
-                                <i class="material-icons right">favorite_border</i>
-                            </button>
-                        <!-- <a href="controller/removerFavoritos.php?id=<?php echo $dados['id']; ?>" id="link-car" class="btn-floating halfway-fab red" title="Favoritar">
-                            <i class="material-icons right">favorite</i>
-                        </a> -->
-                        
-                        <?php
-                            endif;
-                        ?>
-                    </form>
+                    <?php
+                        if($dados['favorito'] == 0):
+                    ?>
+                    
+                    <a href="controller/adicionarFavoritos.php?id=<?php echo $dados['id']; ?>" id="link-car" class="btn-floating halfway-fab red fav" title="Favoritar">
+                        <i class="material-icons right">favorite_border</i>
+                    </a>
+                    
+                    <?php
+                        else:
+                    ?>
+                    
+                    <a href="controller/removerFavoritos.php?id=<?php echo $dados['id']; ?>" id="link-car" class="btn-floating halfway-fab red fav" title="Favoritar">
+                        <i class="material-icons right">favorite</i>
+                    </a>
+                    
+                    <?php
+                        endif;
+                    ?>
                 </div>
 
                 <div class="card-content">

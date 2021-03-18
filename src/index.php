@@ -10,7 +10,6 @@
 
     <div class="row">
         <form action="controller/login.php" method="POST" class="col s12 m6 push-m3">
-            <input type="hidden" name="id" value="">
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">email</i>

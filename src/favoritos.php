@@ -1,7 +1,9 @@
 <?php
+    session_start();
     include_once("partials/head.php");
-
     require_once("controller/conexao.php");
+
+    $_SESSION['paginaAtual'] = $_SERVER['PHP_SELF'];
     $sql = "SELECT * FROM produtos WHERE favorito = 1";
     $executar = mysqli_query($conn, $sql);
 
