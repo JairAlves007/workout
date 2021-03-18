@@ -54,25 +54,31 @@
                 <div class="card-image light">
                     <img src="<?php echo $dados['img']; ?>" alt="Foto Do <?php echo $dados['nome']; ?>">
                     
-                    <?php
-                        if($dados['favorito'] == 0):
-                    ?>
-                    
-                    <a href="controller/adicionarFavoritos.php?id=<?php echo $dados['id']; ?>" id="link-car" class="btn-floating halfway-fab red" title="Favoritar">
-                        <i class="material-icons right">favorite_border</i>
-                    </a>
-                    
-                    <?php
-                        else:
-                    ?>
-                    
-                    <a href="controller/removerFavoritos.php?id=<?php echo $dados['id']; ?>" id="link-car" class="btn-floating halfway-fab red" title="Favoritar">
-                        <i class="material-icons right">favorite</i>
-                    </a>
-                    
-                    <?php
-                        endif;
-                    ?>
+                    <form action="" method="post">
+                        <input type="hidden" name="id" value="<?php echo $dados['id']; ?>">
+                        <?php
+                            if($dados['favorito'] == 0):
+                        ?>
+                            <button type="submit" id="link-car" class="btn-floating halfway-fab red" title="Favoritar">
+                                <i class="material-icons right">favorite_border</i>
+                            </button>
+                        <!-- <a href="controller/adicionarFavoritos.php?id=" >
+                        </a> -->
+                        
+                        <?php
+                            else:
+                        ?>
+                            <button type="submit" id="link-car" class="btn-floating halfway-fab red" title="Favoritar">
+                                <i class="material-icons right">favorite_border</i>
+                            </button>
+                        <!-- <a href="controller/removerFavoritos.php?id=<?php echo $dados['id']; ?>" id="link-car" class="btn-floating halfway-fab red" title="Favoritar">
+                            <i class="material-icons right">favorite</i>
+                        </a> -->
+                        
+                        <?php
+                            endif;
+                        ?>
+                    </form>
                 </div>
 
                 <div class="card-content">
@@ -129,4 +135,8 @@
 
 <?php
     include_once("partials/footer.php");
+?>
+
+<?php
+    include_once("partials/scripts.php");
 ?>

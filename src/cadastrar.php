@@ -59,3 +59,9 @@
 <?php
     include_once("partials/footer.php");
 ?>
+
+    <script src="assets/js/main.js"></script>
+
+<?php
+    include_once("partials/scripts.php");
+?>
