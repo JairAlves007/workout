@@ -4,8 +4,9 @@
     require_once("controller/conexao.php");
     
     $_SESSION['paginaAtual'] = $_SERVER['PHP_SELF'];
-    $sql = "SELECT * FROM produtos WHERE carrinho = 1";
+    $sql = "SELECT * FROM produtos WHERE carrinho = 1 AND estoque > 0";
     $executar = mysqli_query($conn, $sql);
+    $rows = mysqli_num_rows($executar);
 ?>
     <title>Carrinho</title>
 
@@ -19,10 +20,16 @@
 
     <h1 class="light white-text center">Meu Carrinho</h1>
 
+    <?php
+        if($rows > 0):
+    ?>
+
     <div class="row" id="produtos">
         <div class="col s12 m4 push-m2 cards">
+
             <?php 
                 while($dados = mysqli_fetch_assoc($executar)):
+                    $_SESSION['estoque'] = $dados['estoque'];
             ?>
             
             <div class="card">
@@ -85,18 +92,21 @@
             ?>
         </div>
     </div>
-
-    <form action="" method="POST" class="form-comprar" accept-charset="utf-8">
-        <div class="row">
-            <div class="col s11">
-                <button type="submit" class="btn green hoverable right" name="comprar">
-                    Comprar
-                    <i class="material-icons left">attach_money</i>
-                </button>
-            </div>
+    
+    <div class="row">
+        <div class="col s11">
+            <a href="controller/comprarTudo.php" class="btn green hoverable right" name="comprar">
+                Comprar
+                <i class="material-icons left">attach_money</i>
+            </a>
         </div>
-    </form>
+    </div>
 
+    <?php
+        else:
+            echo '<h1 class="light white-text center">Nenhum Produto Adicionado Ao Carrinho</h1>';
+        endif;
+    ?>
 
 <?php
     include_once("partials/footer.php");

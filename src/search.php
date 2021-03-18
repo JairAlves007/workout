@@ -5,7 +5,7 @@
 
     $_SESSION['paginaAtual'] = $_SERVER['PHP_SELF'];
     $search = $_POST['search'];
-    $sql = "SELECT * FROM produtos WHERE nome LIKE '%$search%'";
+    $sql = "SELECT * FROM produtos WHERE nome LIKE '%$search%' AND estoque > 0";
     $executar = mysqli_query($conn, $sql);
 ?>
 
