@@ -9,7 +9,7 @@
     include_once("partials/head.php");
 ?>
 
-    <title>Em alta</title>
+    <title>HomePage - WorkOut</title>
 
 <?php
     include_once("partials/end_head.php");
@@ -39,7 +39,7 @@
 
     <h1 class="light white-text mobile-title center">Seja Bem Vindo <?php echo $_SESSION['username']; ?></h1>
 
-    <h3 class="light center white-text">Veja Um De Nossos Produtos</h3>
+    <h3 class="light center white-text">Últimos Produtos Adicionados</h3>
 
     <!-- Card De Produtos -->
 

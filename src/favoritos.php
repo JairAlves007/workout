@@ -6,16 +6,16 @@
     $_SESSION['paginaAtual'] = $_SERVER['PHP_SELF'];
     $sql = "SELECT * FROM produtos WHERE favorito = 1 AND estoque > 0";
     $executar = mysqli_query($conn, $sql);
-
+    $rows = mysqli_num_rows($executar);
 ?>
     <title>Favoritos</title>
 
 <?php
-    include_once("partials/end_head.php")
+    include_once("partials/end_head.php");
 ?>
     
 <?php
-    include_once("partials/header.php")
+    include_once("partials/header.php");
 ?>
 
     <div class="card-panel hoverable fslider">
@@ -24,8 +24,13 @@
 
     <h1 class="white-text light center">Seus Produtos Favoritos</h1>
 
-    <div class="row">
-        <div class="col s12 m4 push-m3 cards">
+    <?php
+        if($rows > 0):
+    ?>
+
+    <div class="row" id="produtos">
+        <div class="col s12 m4 push-m2 cards">
+
             <?php 
                 while($dados = mysqli_fetch_assoc($executar)):
             ?>
@@ -34,8 +39,8 @@
                 <div class="card-image light">
                     <img src="<?php echo $dados['img']; ?>" alt="Foto Do <?php echo $dados['nome']; ?>">
 
-                    <a href="controller/removerFavoritos.php?id=<?php echo $dados['id']; ?>" class="btn-floating halfway-fab waves-effect waves-light red" title="Favoritar">
-                        <i class="material-icons left">favorite</i>
+                    <a class="btn-floating halfway-fab waves-effect waves-light red" title="Favoritar">
+                        <i class="material-icons left">favorite_border</i>
                     </a>
                 </div>
 
@@ -90,6 +95,21 @@
             ?>
         </div>
     </div>
+    
+    <div class="row">
+        <div class="col s11">
+            <a href="controller/comprarTudo.php" class="btn green hoverable right" name="comprar">
+                Comprar
+                <i class="material-icons left">attach_money</i>
+            </a>
+        </div>
+    </div>
+
+    <?php
+        else:
+            echo '<h1 class="light white-text center">Nenhum Produto Favoritado</h1>';
+        endif;
+    ?>
 
 <?php
     include_once("partials/footer.php");

@@ -1,7 +1,7 @@
 <?php
     require_once("conexao.php");
 
-    if($_POST['valor'] > 0){
+    if($_POST['valor'] >= 0 && $_POST['estoque'] > 0){
         $img = mysqli_escape_string($conn, $_POST['img']);
         $nome = mysqli_escape_string($conn, $_POST['nome']);
         $estoque = mysqli_escape_string($conn, $_POST['estoque']);
