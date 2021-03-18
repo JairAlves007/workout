@@ -4,10 +4,15 @@
     require_once("controller/conexao.php");
 
     $_SESSION['paginaAtual'] = $_SERVER['PHP_SELF'];
-    $search = $_POST['search'];
-    $sql = "SELECT * FROM produtos WHERE nome LIKE '%$search%' AND estoque > 0";
-    $executar = mysqli_query($conn, $sql);
-    $rows = mysqli_num_rows($executar);
+
+    if(!empty($_POST['search'])){
+        $search = $_POST['search'];
+        $sql = "SELECT * FROM produtos WHERE nome LIKE '%$search%'";
+        $executar = mysqli_query($conn, $sql);
+        $rows = mysqli_num_rows($executar);
+    } else {
+        header("Location: home.php");
+    }
 ?>
 
     <title>Pesquisa</title>

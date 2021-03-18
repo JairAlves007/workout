@@ -1,4 +1,12 @@
 <?php
+    session_start();
+
+    if(isset($_SESSION['logado'])){
+        header('Location: home.php');
+    }
+?>
+
+<?php
     include_once("partials/head.php");
 ?>
     <title>Faça Seu Login</title>

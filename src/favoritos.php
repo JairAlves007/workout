@@ -4,7 +4,7 @@
     require_once("controller/conexao.php");
 
     $_SESSION['paginaAtual'] = $_SERVER['PHP_SELF'];
-    $sql = "SELECT * FROM produtos WHERE favorito = 1 AND estoque > 0";
+    $sql = "SELECT * FROM produtos WHERE favorito = 1";
     $executar = mysqli_query($conn, $sql);
     $rows = mysqli_num_rows($executar);
 ?>
@@ -39,8 +39,8 @@
                 <div class="card-image light">
                     <img src="<?php echo $dados['img']; ?>" alt="Foto Do <?php echo $dados['nome']; ?>">
 
-                    <a class="btn-floating halfway-fab waves-effect waves-light red" title="Favoritar">
-                        <i class="material-icons left">favorite_border</i>
+                    <a href="controller/removerFavoritos.php?id=<?php echo $dados['id']; ?>" class="btn-floating halfway-fab waves-effect waves-light red" title="Favoritar">
+                        <i class="material-icons left">favorite</i>
                     </a>
                 </div>
 
