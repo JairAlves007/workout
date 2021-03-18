@@ -12,7 +12,7 @@
 ?>
 
     <div class="row">
-        <form action="controller/insert_product.php" method="POST" class="col s12 m6 push-m3">
+        <form action="controller/inserirProduto.php" method="POST" class="col s12 m6 push-m3">
 
             <h2 class="light white-text center">Cadastre Um Produto</h2>
 

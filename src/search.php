@@ -7,6 +7,7 @@
     $search = $_POST['search'];
     $sql = "SELECT * FROM produtos WHERE nome LIKE '%$search%' AND estoque > 0";
     $executar = mysqli_query($conn, $sql);
+    $rows = mysqli_num_rows($executar);
 ?>
 
     <title>Pesquisa</title>
@@ -19,10 +20,17 @@
     include_once("partials/header.php");
 ?>
 
-    <h1 class="light center white-text">1 Produto Relacionado</h1>
-
     <!-- Card De Produtos -->
-
+    
+    <?php
+        if($rows > 0):
+            if($rows == 1):
+                echo "<h1 class='light center white-text'>1 Produto Relacionado</h1>";
+            else:
+                echo "<h1 class='light center white-text'>{$rows} Produtos Relacionados</h1>";
+            endif;
+    ?>
+    
     <div class="row" id="produtos">
         <div class="col s12 m4 push-m3 cards">
             <?php 
@@ -104,6 +112,12 @@
             ?>
         </div>
     </div>
+    
+    <?php
+        else:
+            echo "<h1 class='light center white-text'>Nenhum Produto Relacionado</h1>";
+        endif;
+    ?>
 
 <?php
     include_once("partials/footer.php");
