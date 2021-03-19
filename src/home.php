@@ -116,6 +116,15 @@
                     <p>
                         <?php echo $dados['descricao']; ?>
                     </p>
+                    
+                    <form action="controller/comprar.php" method="POST">
+                        <input type="hidden" name="id_produto" value="<?php echo $dados['id']; ?>">
+                        <input type="hidden" name="estoque" value="<?php echo $dados['estoque']; ?>">
+                        <button class="btn green hoverable" name="comprar">
+                            Comprar
+                            <i class="material-icons left">attach_money</i>
+                        </button>
+                    </form>
                 </div>
 
             </div>
