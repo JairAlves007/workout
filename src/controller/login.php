@@ -14,9 +14,11 @@
     if($rows == 1){
         $_SESSION['id_user'] = $resultado['id'];
         $_SESSION['username'] = $resultado['nome'];
+        $_SESSION['autenticado'] = true;
         $_SESSION['logado'] = true;
         header('Location: ../home.php');
     } else {
+        $_SESSION['autenticado'] = false;
         header('Location: ../index.php');
     }
 ?>
