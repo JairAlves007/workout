@@ -9,7 +9,7 @@
     for($i = 0; $i < count($estoques); $i++){
         if($estoques[$i] > 1){
             $estoqueNovo = $estoques[$i] - 1;
-            $sql = "UPDATE produtos SET carrinho = 0, estoque = $estoques[$i] - 1 WHERE id = '$ids[$i]'"; 
+            $sql = "UPDATE produtos SET carrinho = 0, estoque = $estoqueNovo WHERE id = '$ids[$i]'"; 
             $executar = mysqli_query($conn, $sql);
         } else {
             $sql = "DELETE FROM produtos WHERE id = '$ids[$i]'";
