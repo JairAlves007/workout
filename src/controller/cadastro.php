@@ -9,5 +9,6 @@
 
     $sql = "INSERT INTO cadastro (nome, email, senha, telefone) VALUES ('$nome', '$email', md5('$senha'), '$telefone')";
     $executar = mysqli_query($conn, $sql);
+    $_SESSION['msg'] = "Cadastrado Com Sucesso!";
     header('Location: ../index.php');
 ?>

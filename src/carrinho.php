@@ -26,10 +26,14 @@
 
     <div class="row" id="produtos">
         <div class="col s12 m4 push-m2 cards">
-
             <?php 
-                while($dados = mysqli_fetch_assoc($executar)):
-                    $_SESSION['estoque'] = $dados['estoque'];
+                $i = 1;
+                $Ids = array();
+                $estoques = array();
+                while($i <= $rows && $dados = mysqli_fetch_assoc($executar)):
+                    // $_SESSION['estoque'] = $dados['estoque'];
+                    array_push($Ids, $dados['id']);
+                    array_push($estoques, $dados['estoque']);
             ?>
             
             <div class="card">
@@ -88,11 +92,19 @@
             </div>
 
             <?php
+                $i++;
                 endwhile;
             ?>
         </div>
     </div>
     
+    <?php
+        $_SESSION['arrayID'] = $Ids;
+        $_SESSION['arrayEstoque'] = $estoques;
+        var_dump($_SESSION['arrayID']);
+        var_dump($_SESSION['arrayEstoque']);
+    ?>
+
     <div class="row">
         <div class="col s11">
             <a href="controller/comprarTudo.php" class="btn green hoverable right" name="comprar">

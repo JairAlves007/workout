@@ -14,11 +14,11 @@
     if($rows == 1){
         $_SESSION['id_user'] = $resultado['id'];
         $_SESSION['username'] = $resultado['nome'];
-        $_SESSION['autenticado'] = true;
+        $_SESSION['msg'] = "Conectado Com Sucesso!";
         $_SESSION['logado'] = true;
         header('Location: ../home.php');
     } else {
-        $_SESSION['autenticado'] = false;
+        $_SESSION['msg'] = "E-mail Ou Senha Incorretos!";
         header('Location: ../index.php');
     }
 ?>

@@ -9,7 +9,9 @@
 <?php
     include_once("partials/head.php");
 ?>
+
     <title>Faça Seu Login</title>
+
 <?php
     include_once("partials/end_head.php");
 ?>

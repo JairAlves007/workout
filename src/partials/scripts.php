@@ -6,6 +6,18 @@
     <script src="assets/js/dropdown.js"></script>
     <script src="assets/js/slider.js"></script>
     <script src="assets/js/sidenav.js"></script>
+    <script>
+        <?php
+            if(isset($_SESSION['msg'])):
+        ?>
+
+            M.toast({html: '<?php echo $_SESSION['msg']; ?>', classes: 'rounded'});
+        
+        <?php
+            endif;
+            unset($_SESSION['msg']);
+        ?>
+    </script>
 </body>
 
 </html>
