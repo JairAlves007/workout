@@ -31,7 +31,6 @@
                 $Ids = array();
                 $estoques = array();
                 while($i <= $rows && $dados = mysqli_fetch_assoc($executar)):
-                    // $_SESSION['estoque'] = $dados['estoque'];
                     array_push($Ids, $dados['id']);
                     array_push($estoques, $dados['estoque']);
             ?>
@@ -101,8 +100,6 @@
     <?php
         $_SESSION['arrayID'] = $Ids;
         $_SESSION['arrayEstoque'] = $estoques;
-        var_dump($_SESSION['arrayID']);
-        var_dump($_SESSION['arrayEstoque']);
     ?>
 
     <div class="row">
