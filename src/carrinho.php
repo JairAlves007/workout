@@ -39,9 +39,25 @@
                 <div class="card-image light">
                     <img src="<?php echo $dados['img']; ?>" alt="Foto Do <?php echo $dados['nome']; ?>">
 
-                    <a class="btn-floating halfway-fab waves-effect waves-light red" title="Favoritar">
-                        <i class="material-icons left">favorite_border</i>
+                    <?php
+                        if($dados['favorito'] == 0):
+                    ?>
+                    
+                    <a href="controller/adicionarFavoritos.php?id=<?php echo $dados['id']; ?>" id="link-car" class="btn-floating halfway-fab red fav" title="Favoritar">
+                        <i class="material-icons right">favorite_border</i>
                     </a>
+                    
+                    <?php
+                        else:
+                    ?>
+                    
+                    <a href="controller/removerFavoritos.php?id=<?php echo $dados['id']; ?>" id="link-car" class="btn-floating halfway-fab red fav" title="Favoritar">
+                        <i class="material-icons right">favorite</i>
+                    </a>
+                    
+                    <?php
+                        endif;
+                    ?>
                 </div>
 
                 <div class="card-content">

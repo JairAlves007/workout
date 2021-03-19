@@ -95,15 +95,6 @@
             ?>
         </div>
     </div>
-    
-    <div class="row">
-        <div class="col s11">
-            <a href="controller/comprarTudo.php" class="btn green hoverable right" name="comprar">
-                Comprar
-                <i class="material-icons left">attach_money</i>
-            </a>
-        </div>
-    </div>
 
     <?php
         else:

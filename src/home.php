@@ -47,8 +47,7 @@
         <div class="col s12 m4 push-m3 cards">
             <?php 
                 $i = 1;
-                // $i <= 2 &&
-                while($i <= 3 && $dados = mysqli_fetch_assoc($executar)):
+                while($i <= 4 && $dados = mysqli_fetch_assoc($executar)):
             ?>
             
             <div class="card">
