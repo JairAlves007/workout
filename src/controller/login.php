@@ -14,7 +14,7 @@
     if($rows == 1){
         $_SESSION['id_user'] = $resultado['id'];
         $_SESSION['username'] = $resultado['nome'];
-        $_SESSION['msg'] = "Conectado Com Sucesso!";
+        $_SESSION['msg'] = "Conectado Com Sucesso! Bem-Vindo " . $_SESSION['username'];
         $_SESSION['logado'] = true;
         header('Location: ../home.php');
     } else {

@@ -1,5 +1,6 @@
 <?php
     include_once("partials/head.php");
+    session_start();
 ?>
     <title>Adicionar Produtos</title>
 
