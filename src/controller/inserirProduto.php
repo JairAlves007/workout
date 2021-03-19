@@ -2,7 +2,7 @@
     session_start();
     require_once("conexao.php");
     
-    if($_POST['valor'] >= 0 && $_POST['estoque'] > 0){
+    if($_POST['valor'] > 0 && $_POST['estoque'] > 0){
         $img = $_POST['img'];
         $nome = $_POST['nome'];
         $estoque = $_POST['estoque'];
