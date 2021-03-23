@@ -39,7 +39,7 @@
                 <div class="card-image light">
                     <img src="<?php echo $dados['img']; ?>" alt="Foto Do <?php echo $dados['nome']; ?>">
 
-                    <a href="controller/removerFavoritos.php?id=<?php echo $dados['id']; ?>" class="btn-floating halfway-fab waves-effect waves-light red" title="Favoritar">
+                    <a href="controller/removerFavoritos.php?id=<?php echo $dados['id']; ?>" class="btn-floating halfway-fab waves-effect waves-light red" title="Remover Dos Favoritos">
                         <i class="material-icons left">favorite</i>
                     </a>
                 </div>
@@ -56,7 +56,7 @@
                                     if($dados['carrinho'] == 0):
                                 ?>
                                 
-                                <a href="controller/adicionarCarrinho.php?id=<?php echo $dados['id']; ?>" class="btn-floating red" title="Favoritar">
+                                <a href="controller/adicionarCarrinho.php?id=<?php echo $dados['id']; ?>" class="btn-floating red" title="Adicionar Ao Carrinho">
                                     <i class="material-icons right">add_shopping_cart</i>
                                 </a>
                                 
@@ -64,7 +64,7 @@
                                     else:
                                 ?>
                                 
-                                <a href="controller/removerCarrinho.php?id=<?php echo $dados['id']; ?>" class="btn-floating red" title="Favoritar">
+                                <a href="controller/removerCarrinho.php?id=<?php echo $dados['id']; ?>" class="btn-floating red" title="Remover Do Carrinho">
                                     <i class="material-icons right">shopping_cart</i>
                                 </a>
                                 

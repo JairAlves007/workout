@@ -38,7 +38,7 @@
                         if($dados['favorito'] == 0):
                     ?>
                     
-                    <a href="controller/adicionarFavoritos.php?id=<?php echo $dados['id']; ?>" id="link-car" class="btn-floating halfway-fab red" title="Favoritar">
+                    <a href="controller/adicionarFavoritos.php?id=<?php echo $dados['id']; ?>" id="link-car" class="btn-floating halfway-fab red" title="Adicionar Aos Favoritos">
                         <i class="material-icons right">favorite_border</i>
                     </a>
                     
@@ -46,7 +46,7 @@
                         else:
                     ?>
                     
-                    <a href="controller/removerFavoritos.php?id=<?php echo $dados['id']; ?>" id="link-car" class="btn-floating halfway-fab red" title="Favoritar">
+                    <a href="controller/removerFavoritos.php?id=<?php echo $dados['id']; ?>" id="link-car" class="btn-floating halfway-fab red" title="Remover Dos Favoritos">
                         <i class="material-icons right">favorite</i>
                     </a>
                     
@@ -67,7 +67,7 @@
                                 if($dados['carrinho'] == 0):
                             ?>
                             
-                            <a href="controller/adicionarCarrinho.php?id=<?php echo $dados['id']; ?>" id="link-car" class="btn-floating red" title="Favoritar">
+                            <a href="controller/adicionarCarrinho.php?id=<?php echo $dados['id']; ?>" id="link-car" class="btn-floating red" title="Adicionar Ao Carrinho">
                                 <i class="material-icons right">add_shopping_cart</i>
                             </a>
                             
@@ -75,7 +75,7 @@
                                 else:
                             ?>
                             
-                            <a href="controller/removerCarrinho.php?id=<?php echo $dados['id']; ?>" id="link-car" class="btn-floating red" title="Favoritar">
+                            <a href="controller/removerCarrinho.php?id=<?php echo $dados['id']; ?>" id="link-car" class="btn-floating red" title="Remover Do Carrinho">
                                 <i class="material-icons right">shopping_cart</i>
                             </a>
                             
