@@ -2,10 +2,10 @@
     session_start();
     require_once("conexao.php");
     
-    $id = $_GET['id'];
+    $id = $_POST['id'];
     
     $sql = "UPDATE produtos SET favorito = 1 WHERE id = '$id'";
 
     $executar = mysqli_query($conn, $sql);
-    header("Location: {$_SESSION['paginaAtual']}");
+    // header("Location: {$_SESSION['paginaAtual']}");
 ?>

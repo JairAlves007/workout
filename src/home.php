@@ -57,18 +57,24 @@
                     <?php
                         if($dados['favorito'] == 0):
                     ?>
-                    
-                    <a href="controller/adicionarFavoritos.php?id=<?php echo $dados['id']; ?>" id="link-car" class="btn-floating halfway-fab red fav" title="Adicionar Aos Favoritos">
-                        <i class="material-icons right">favorite_border</i>
-                    </a>
+
+                    <form class="favorite">
+                        <input type="hidden" id="id_fav" value="<?php echo $dados['id']; ?>">
+                        <button type="submit" class="btn-floating halfway-fab red fav">
+                            <i class="fa fa-heart-o" id="icon_fav" title="Adicionar Aos Favoritos"></i>                    
+                        </button>
+                    </form>
                     
                     <?php
                         else:
                     ?>
                     
-                    <a href="controller/removerFavoritos.php?id=<?php echo $dados['id']; ?>" id="link-car" class="btn-floating halfway-fab red fav" title="Remover Dos Favoritos">
-                        <i class="material-icons right">favorite</i>
-                    </a>
+                    <form class="favorite">
+                        <input type="hidden" id="id_fav" value="<?php echo $dados['id']; ?>">
+                        <button type="submit" class="btn-floating halfway-fab red fav">
+                            <i class="fa fa-heart" id="icon_fav" title="Remover Dos Favoritos"></i>                    
+                        </button>
+                    </form>
                     
                     <?php
                         endif;
@@ -87,17 +93,23 @@
                                 if($dados['carrinho'] == 0):
                             ?>
                             
-                            <a href="controller/adicionarCarrinho.php?id=<?php echo $dados['id']; ?>" id="link-car" class="btn-floating red" title="Adicionar Ao Carrinho">
-                                <i class="material-icons right">add_shopping_cart</i>
-                            </a>
+                            <form class="cart">
+                                <input type="hidden" id="id_cart" value="<?php echo $dados['id']; ?>">
+                                <button type="submit" class="btn-floating red">
+                                    <i class="fa fa-cart-plus" id="icon_cart" title="Adicionar Ao Carrinho"></i>                    
+                                </button>
+                            </form>
                             
                             <?php
                                 else:
                             ?>
                             
-                            <a href="controller/removerCarrinho.php?id=<?php echo $dados['id']; ?>" id="link-car" class="btn-floating red" title="Remover Do Carrinho">
-                                <i class="material-icons right">shopping_cart</i>
-                            </a>
+                            <form class="cart">
+                                <input type="hidden" id="id_cart" value="<?php echo $dados['id']; ?>">
+                                <button type="submit" class="btn-floating red">
+                                    <i class="fa fa-shopping-cart" id="icon_cart" title="Remover Do Carrinho"></i>                    
+                                </button>
+                            </form>
                             
                             <?php
                                 endif;

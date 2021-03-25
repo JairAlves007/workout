@@ -29,7 +29,7 @@
     ?>
 
     <div class="row" id="produtos">
-        <div class="col s12 m4 push-m2 cards">
+        <div class="col s12 m4 push-m3 cards">
 
             <?php 
                 while($dados = mysqli_fetch_assoc($executar)):
