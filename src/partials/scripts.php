@@ -6,6 +6,7 @@
     <script src="assets/js/dropdown.js"></script>
     <script src="assets/js/slider.js"></script>
     <script src="assets/js/sidenav.js"></script>
+    <script src="assets/js/cart.js"></script>
     <script src="assets/js/favorite.js"></script>
 
     <script>

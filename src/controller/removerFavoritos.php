@@ -7,5 +7,4 @@
     $sql = "UPDATE produtos SET favorito = 0 WHERE id = '$id'";
 
     $executar = mysqli_query($conn, $sql);
-    // header("Location: {$_SESSION['paginaAtual']}");
 ?>

@@ -1,38 +1,38 @@
-var forms = document.querySelectorAll('.favorite');
-var icons = document.querySelectorAll('.favorite #icon_fav');
-var inputs = document.querySelectorAll('#id_fav');
-var ids = [];
+var formsFavorite = document.querySelectorAll('.favorite');
+var iconsFavorite = document.querySelectorAll('.favorite #icon_fav');
+var inputsFavorite = document.querySelectorAll('#id_fav');
+var idsFavorite = [];
 
-for(let i = 0; i < inputs.length; i++){
-    ids.push(inputs[i].value);
+for(let i = 0; i < inputsFavorite.length; i++){
+    idsFavorite.push(inputsFavorite[i].value);
 }
 
-for(let i = 0; i < forms.length; i++){
-    forms[i].onsubmit = () => {
-        if(icons[i].classList.contains('fa-heart-o')){
+for(let i = 0; i < formsFavorite.length; i++){
+    formsFavorite[i].onsubmit = () => {
+        if(iconsFavorite[i].classList.contains('fa-heart-o')){
             
-            icons[i].classList.remove('fa-heart-o');
-            icons[i].classList.add('fa-heart');
-            icons[i].setAttribute('title', 'Remover Dos Favoritos');
+            iconsFavorite[i].classList.remove('fa-heart-o');
+            iconsFavorite[i].classList.add('fa-heart');
+            iconsFavorite[i].setAttribute('title', 'Remover Dos Favoritos');
 
             $.ajax({
                 url: 'controller/adicionarFavoritos.php',
                 method: 'POST',
                 data: {
-                    id: ids[i]
+                    id: idsFavorite[i]
                 }
             })
-        } else if(icons[i].classList.contains('fa-heart')) {
+        } else if(iconsFavorite[i].classList.contains('fa-heart')) {
 
-            icons[i].classList.remove('fa-heart');
-            icons[i].classList.add('fa-heart-o');
-            icons[i].setAttribute('title', 'Adicionar Aos Favoritos');
+            iconsFavorite[i].classList.remove('fa-heart');
+            iconsFavorite[i].classList.add('fa-heart-o');
+            iconsFavorite[i].setAttribute('title', 'Adicionar Aos Favoritos');
 
             $.ajax({
                 url: 'controller/removerFavoritos.php',
                 method: 'POST',
                 data: {
-                    id: ids[i]
+                    id: idsFavorite[i]
                 }
             })
         }
