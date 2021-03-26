@@ -43,23 +43,17 @@
                         if($dados['favorito'] == 0):
                     ?>
 
-                    <form class="favorite">
-                        <input type="hidden" id="id_fav" value="<?php echo $dados['id']; ?>">
-                        <button type="submit" class="btn-floating halfway-fab red fav">
-                            <i class="fa fa-heart-o" id="icon_fav" title="Adicionar Aos Favoritos"></i>                    
-                        </button>
-                    </form>
+                    <a href="controller/adicionarFavoritos?id=<?php echo $dados['id']; ?>" class="btn-floating halfway-fab red fav">
+                        <i class="fa fa-heart-o" id="icon_fav" title="Adicionar Aos Favoritos"></i>                    
+                    </a>
                     
                     <?php
                         else:
                     ?>
                     
-                    <form class="favorite">
-                        <input type="hidden" id="id_fav" value="<?php echo $dados['id']; ?>">
-                        <button type="submit" class="btn-floating halfway-fab red fav">
-                            <i class="fa fa-heart" id="icon_fav" title="Remover Dos Favoritos"></i>                    
-                        </button>
-                    </form>
+                    <a href="controller/removerFavoritos?id=<?php echo $dados['id']; ?>" class="btn-floating halfway-fab red fav">
+                        <i class="fa fa-heart" id="icon_fav" title="Remover Dos Favoritos"></i>                    
+                    </a>
                     
                     <?php
                         endif;

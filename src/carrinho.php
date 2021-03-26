@@ -78,23 +78,17 @@
                                 if($dados['carrinho'] == 0):
                             ?>
                             
-                            <form class="cart">
-                                <input type="hidden" id="id_cart" value="<?php echo $dados['id']; ?>">
-                                <button type="submit" class="btn-floating red">
-                                    <i class="fa fa-cart-plus" id="icon_cart" title="Adicionar Ao Carrinho"></i>                    
-                                </button>
-                            </form>
+                            <a href="controller/adicionarCarrinho?id=<?php echo $dados['id']; ?>" class="btn-floating red">
+                                <i class="fa fa-cart-plus" id="icon_fav" title="Adicionar Ao Carrinho"></i>                    
+                            </a>
                             
                             <?php
                                 else:
                             ?>
                             
-                            <form class="cart">
-                                <input type="hidden" id="id_cart" value="<?php echo $dados['id']; ?>">
-                                <button type="submit" class="btn-floating red">
-                                    <i class="fa fa-shopping-cart" id="icon_cart" title="Remover Do Carrinho"></i>                    
-                                </button>
-                            </form>
+                            <a href="controller/removerCarrinho?id=<?php echo $dados['id']; ?>" class="btn-floating red">
+                                <i class="fa fa-shopping-cart" id="icon_fav" title="Remover Do Carrinho"></i>                    
+                            </a>
                             
                             <?php
                                 endif;
